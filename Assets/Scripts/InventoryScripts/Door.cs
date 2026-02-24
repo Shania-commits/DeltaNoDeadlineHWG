@@ -45,6 +45,7 @@ public class Door : MonoBehaviour
         if (isOpening)
         {
             Debug.Log("You Win!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             //SceneManager.LoadScene("WinScene"); For when we add a win scene
         }
     }

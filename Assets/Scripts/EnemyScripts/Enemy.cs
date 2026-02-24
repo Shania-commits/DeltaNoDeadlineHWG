@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("You Lose!");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //SceneManager.LoadScene("LoseScene"); For when we add a lose scene
         }
     }
 }

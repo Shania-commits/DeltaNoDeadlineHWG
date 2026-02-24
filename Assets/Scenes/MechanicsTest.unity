@@ -2934,6 +2934,7 @@ GameObject:
   - component: {fileID: 2006813997}
   - component: {fileID: 2006814002}
   - component: {fileID: 2006814001}
+  - component: {fileID: 2006814003}
   m_Layer: 0
   m_Name: TempEnemy
   m_TagString: Untagged
@@ -2956,7 +2957,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3070,6 +3071,18 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2006814003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006813996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6752591dfaa2aa44af53b0652279400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
 --- !u!1 &2070583760
 GameObject:
   m_ObjectHideFlags: 0
@@ -3086,7 +3099,7 @@ GameObject:
   - component: {fileID: 2070583768}
   m_Layer: 0
   m_Name: TempPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3179,7 +3192,7 @@ Transform:
   m_GameObject: {fileID: 2070583760}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.4, y: 2.71, z: -15.76}
+  m_LocalPosition: {x: -18.2, y: 2.71, z: -14.9}
   m_LocalScale: {x: 2.5132, y: 2.5132, z: 2.5132}
   m_ConstrainProportionsScale: 0
   m_Children: []
