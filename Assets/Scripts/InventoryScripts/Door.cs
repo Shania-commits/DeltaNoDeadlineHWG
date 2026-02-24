@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
@@ -43,7 +44,8 @@ public class Door : MonoBehaviour
 
         if (isOpening)
         {
-            Debug.Log("Door is opening...");
+            Debug.Log("You Win!");
+            //SceneManager.LoadScene("WinScene"); For when we add a win scene
         }
     }
 }
