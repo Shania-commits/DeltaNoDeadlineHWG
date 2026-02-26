@@ -1,35 +1,41 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerControlScript : MonoBehaviour
 {
-    public float speed = 13f;
-    public float turnSpeed = 74f;
+    [Header("Movement Settings")]
+    public float speed = 15f;
+    public float turnSpeed = 220f;
+
     private Rigidbody rb;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = this.GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
+
+        // Freeze unwanted rotations (keep only Y rotation for turning)
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+
+        // Smooth interpolation for physics-based movement
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
-    }
+        // Get input
+        float horizontal = Input.GetAxis("Horizontal"); // A / D
+        float vertical = Input.GetAxis("Vertical");     // W / S
 
-    private void FixedUpdate()
-    {
-        //Moves player
-        float movementX = Input.GetAxis("Horizontal"); //Turns left and right
-        float movementZ = Input.GetAxis("Vertical"); //Forwaed and back
+        // ---- MOVEMENT ----
+        Vector3 moveDirection = transform.forward * vertical;
+        Vector3 targetPosition = rb.position + moveDirection * speed * Time.fixedDeltaTime;
 
-        //Handles forward movement
-        Vector3 movement = transform.forward * movementZ;
-        rb.AddForce(movement * speed);
+        // Move the Rigidbody while respecting collisions
+        rb.MovePosition(targetPosition);
 
-        //Handles turning
-        Quaternion tRotation = Quaternion.Euler(0f, movementX * turnSpeed * Time.fixedDeltaTime, 0f);
-        rb.MoveRotation(rb.rotation * tRotation);
+        // ---- TURNING ----
+        float turnAmount = horizontal * turnSpeed * Time.fixedDeltaTime;
+        Quaternion turnRotation = Quaternion.Euler(0f, turnAmount, 0f);
+        rb.MoveRotation(rb.rotation * turnRotation);
     }
 }

@@ -29,7 +29,7 @@ public class Door : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.X))
+        if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             if (currentInventory.hasKey)
             {
