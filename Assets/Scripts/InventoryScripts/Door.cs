@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
     private bool playerInRange = false;
     private PlayerInventory currentInventory;
 
+    //Check if player in range and has key
     private void OnTriggerEnter(Collider other)
     {
         PlayerInventory inventory = other.GetComponent<PlayerInventory>();
@@ -18,6 +19,7 @@ public class Door : MonoBehaviour
         }
     }
 
+    //Reset player in range and inventory when player leaves trigger
     private void OnTriggerExit(Collider other)
     {
         if (other.GetComponent<PlayerInventory>() != null)
@@ -27,6 +29,7 @@ public class Door : MonoBehaviour
         }
     }
 
+    //Check for player input to open door and win game
     private void Update()
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))

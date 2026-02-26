@@ -26,14 +26,14 @@ public class PlayerControlScript : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal"); // A / D
         float vertical = Input.GetAxis("Vertical");     // W / S
 
-        // ---- MOVEMENT ----
+        //Movement
         Vector3 moveDirection = transform.forward * vertical;
         Vector3 targetPosition = rb.position + moveDirection * speed * Time.fixedDeltaTime;
 
         // Move the Rigidbody while respecting collisions
         rb.MovePosition(targetPosition);
 
-        // ---- TURNING ----
+        //Turning
         float turnAmount = horizontal * turnSpeed * Time.fixedDeltaTime;
         Quaternion turnRotation = Quaternion.Euler(0f, turnAmount, 0f);
         rb.MoveRotation(rb.rotation * turnRotation);
