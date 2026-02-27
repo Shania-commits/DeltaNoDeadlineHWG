@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -12,11 +14,20 @@ public class EnemyAI : MonoBehaviour
     private Vector3 roamTarget;
     private float roamTimer = 0f;
 
+    public Volume screenEffect;
+    private Vignette vignette;
+
     void Start()
     {
         // Ensure player reference is set
         agent = GetComponent<NavMeshAgent>();
         SetNewRoamTarget();
+
+        //Gets vignette reference
+        if (screenEffect.profile.TryGet(out vignette))
+        {
+            vignette.intensity.value = 0f;
+        }
     }
 
     void Update()
@@ -24,10 +35,21 @@ public class EnemyAI : MonoBehaviour
         // Check distance to player
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
+        
+
         if (distanceToPlayer <= detectionRadius && CanReachPlayer())
         {
             // Chase the player if close and reachable
             agent.SetDestination(player.position);
+
+            float rangeDistance = Mathf.Clamp(distanceToPlayer, 1f, 10f); //Calculates distance within detection radius
+
+            float vignetteIntesnity = 1f - ((rangeDistance - 1f) / (10f -1f)); //Converts distance to usable range
+
+            if (vignette != null)
+            {
+                vignette.intensity.value = Mathf.Lerp(0f, 0.8f, vignetteIntesnity); //Increases vignette on distance
+            }
         }
         else
         {

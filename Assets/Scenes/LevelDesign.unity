@@ -457,6 +457,7 @@ GameObject:
   - component: {fileID: 34971005}
   - component: {fileID: 34971008}
   - component: {fileID: 34971009}
+  - component: {fileID: 34971010}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -614,6 +615,23 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &34971010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34971004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 772d3a7110db40448a4df828402100c6, type: 2}
 --- !u!1 &43757403 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6399540086129364069, guid: 6013aac9cee0492459990359723731d2, type: 3}
@@ -3707,6 +3725,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1961423670}
+    - target: {fileID: 730837492043405652, guid: a40126436012b8941bc18368ec07fbc8, type: 3}
+      propertyPath: screenEffect
+      value: 
+      objectReference: {fileID: 34971010}
     - target: {fileID: 730837492043405652, guid: a40126436012b8941bc18368ec07fbc8, type: 3}
       propertyPath: detectionRadius
       value: 8
@@ -8199,6 +8221,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8874936604647699545, guid: 3ac70f62188ee1044a4465cf13980bbf, type: 3}
   m_PrefabInstance: {fileID: 988219561}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &992277273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 992277275}
+  - component: {fileID: 992277274}
+  m_Layer: 3
+  m_Name: Monster Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &992277274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992277273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 772d3a7110db40448a4df828402100c6, type: 2}
+--- !u!4 &992277275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992277273}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.0887003, y: 2.5405855, z: 1.1391402}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &993561345 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6399540086129364069, guid: 6013aac9cee0492459990359723731d2, type: 3}
@@ -14518,6 +14589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1562938458}
   - component: {fileID: 1562938459}
+  - component: {fileID: 1562938460}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -14583,6 +14655,23 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
+--- !u!114 &1562938460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562938457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineBasicMultiChannelPerlin
+  NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
+  PivotOffset: {x: 0, y: 0, z: 0}
+  AmplitudeGain: 1
+  FrequencyGain: 1
+  m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1569981446
 GameObject:
   m_ObjectHideFlags: 0
@@ -21053,3 +21142,4 @@ SceneRoots:
   - {fileID: 2118447705}
   - {fileID: 2106784912}
   - {fileID: 1432360218}
+  - {fileID: 992277275}
