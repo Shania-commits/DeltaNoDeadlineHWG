@@ -32,7 +32,7 @@ public class Door : MonoBehaviour
     //Check for player input to open door and win game
     private void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        if (playerInRange && Input.GetKeyDown(KeyCode.X))
         {
             if (currentInventory.hasKey)
             {
