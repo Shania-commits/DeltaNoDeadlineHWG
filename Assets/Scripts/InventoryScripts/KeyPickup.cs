@@ -36,7 +36,11 @@ public class KeyPickup : MonoBehaviour
     {
         // Only pick up if player is in range and presses E
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         if (playerInRange && playerControlScript.actionAvailable)
+=======
+        if (playerInRange && (Input.GetButtonDown("Interact"))) //E Keyboard and B Controller
+>>>>>>> Stashed changes
 =======
         if (playerInRange && (Input.GetButtonDown("Interact"))) //E Keyboard and B Controller
 >>>>>>> Stashed changes
