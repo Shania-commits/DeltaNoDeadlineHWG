@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerControlScript : MonoBehaviour
@@ -8,6 +9,8 @@ public class PlayerControlScript : MonoBehaviour
     public float turnSpeed = 220f;
 
     private Rigidbody rb;
+
+    public bool actionAvailable = false;
 
     void Start()
     {
@@ -37,5 +40,40 @@ public class PlayerControlScript : MonoBehaviour
         float turnAmount = horizontal * turnSpeed * Time.fixedDeltaTime;
         Quaternion turnRotation = Quaternion.Euler(0f, turnAmount, 0f);
         rb.MoveRotation(rb.rotation * turnRotation);
+
+        
     }
+
+    //Tracks if an interaction button is pressed
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        //Button pressed
+        if (context.performed)
+        {
+            Debug.Log("Interaction triggered");
+            PerformInteraction();
+        }
+
+        //Button released
+        if (context.canceled)
+        {
+            Debug.Log("No more interaction");
+            EndInteraction();
+        }
+    }
+
+    //Interaction actions
+    private void PerformInteraction()
+    {
+        Debug.Log("Key press");
+        actionAvailable = true;
+    }
+
+    //Interaction actions
+    private void EndInteraction()
+    {
+        Debug.Log("Key release");
+        actionAvailable = false;
+    }
+
 }
