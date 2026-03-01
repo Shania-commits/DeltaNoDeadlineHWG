@@ -38,7 +38,11 @@ public class KeyPickup : MonoBehaviour
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         if (playerInRange && playerControlScript.actionAvailable)
+=======
+        if (playerInRange && (Input.GetButtonDown("Interact"))) //E Keyboard and B Controller
+>>>>>>> Stashed changes
 =======
         if (playerInRange && (Input.GetButtonDown("Interact"))) //E Keyboard and B Controller
 >>>>>>> Stashed changes
