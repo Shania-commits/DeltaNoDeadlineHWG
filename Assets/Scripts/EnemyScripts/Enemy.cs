@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,8 +7,13 @@ public class Enemy : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("You Lose!");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            //SceneManager.LoadScene("LoseScene"); For when we add a lose scene
+
+            LoseManager loseManager = FindObjectOfType<LoseManager>();
+
+            if (loseManager != null)
+            {
+                loseManager.ShowLoseScreen();
+            }
         }
     }
 }

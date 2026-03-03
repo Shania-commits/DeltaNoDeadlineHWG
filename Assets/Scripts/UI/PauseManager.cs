@@ -8,17 +8,20 @@ public class PauseManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             if (isPaused)
-            {
                 Resume();
-            }
             else
-            {
                 Pause();
-            }
         }
+    }
+
+    void Pause()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
     }
 
     public void Resume()
@@ -28,21 +31,9 @@ public class PauseManager : MonoBehaviour
         isPaused = false;
     }
 
-    void Pause()
-    {
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f; // Freeze game
-        isPaused = true;
-    }
-
     public void LoadMainMenu()
     {
-        Time.timeScale = 1f; // Resume time
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
-    }
-
-    public void LoadSettings()
-    {
-        SceneManager.LoadScene("Settings");
     }
 }
