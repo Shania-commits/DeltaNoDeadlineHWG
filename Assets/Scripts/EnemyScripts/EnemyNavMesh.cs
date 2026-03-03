@@ -18,8 +18,16 @@ public class EnemyAI : MonoBehaviour
     public float roamWaitTime = 3f;
 
     private NavMeshAgent agent;
-    private Vector3 roamTarget;
-    private float roamTimer = 0f;
+    private float roamTimer;
+
+    private enum State
+    {
+        Roaming,
+        Waiting,
+        Chasing
+    }
+
+    private State currentState;
 
     public Volume screenEffect;
     private Vignette vignette;
@@ -31,8 +39,8 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-        // Ensure player reference is set
         agent = GetComponent<NavMeshAgent>();
+        currentState = State.Roaming;
         SetNewRoamTarget();
 
         //Gets vignette reference
@@ -50,39 +58,21 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        // Check distance to player
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-
-        if (distanceToPlayer <= detectionRadius && CanReachPlayer())
+        switch (currentState)
         {
-            // Chase the player if close and reachable
-            agent.SetDestination(player.position);
+            case State.Roaming:
+                HandleRoaming(distanceToPlayer);
+                break;
 
-            SetMotorSpeeds(0.005f, 0.01f); //Controller rumble
+            case State.Waiting:
+                HandleWaiting(distanceToPlayer);
+                break;
 
-            //Rumble option 2
-            //StartCoroutine(SetRumble(0.01f, 0.06f)); 
-
-            float rangeDistance = Mathf.Clamp(distanceToPlayer, 1f, 10f); //Calculates distance within detection radius
-
-            effectIntesnity = 1f - ((rangeDistance - 1f) / (10f -1f)); //Converts distance to usable range
-
-            goalIntensity = Mathf.Lerp(0f, 0.8f, effectIntesnity); //Calculates the new effect intensity 
-        }
-        else
-        {
-            // Roam
-            roamTimer -= Time.deltaTime;
-
-            if (roamTimer <= 0f || agent.remainingDistance < 0.5f)
-            {
-                SetNewRoamTarget();
-            }
-
-            StopRumble();
-
-            goalIntensity = 0f; //Resets goal intensity 
+            case State.Chasing:
+                HandleChasing(distanceToPlayer);
+                break;
         }
 
 
@@ -100,34 +90,80 @@ public class EnemyAI : MonoBehaviour
 
     }
 
-    void SetNewRoamTarget()
+    void HandleRoaming(float distanceToPlayer)
     {
-        // Pick a random point within the roam radius
-        Vector3 randomDirection = Random.insideUnitSphere * roamRadius;
-        randomDirection += transform.position;
-        NavMeshHit hit;
-
-        // Ensure the random point is on the NavMesh
-        if (NavMesh.SamplePosition(randomDirection, out hit, roamRadius, NavMesh.AllAreas))
+        if (CanSeeAndReachPlayer(distanceToPlayer))
         {
-            roamTarget = hit.position;
-            agent.SetDestination(roamTarget);
+            currentState = State.Chasing;
+            return;
         }
 
-        roamTimer = roamWaitTime;
+        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        {
+            currentState = State.Waiting;
+            roamTimer = roamWaitTime;
+            agent.isStopped = true;
+        }
     }
-    // Check if the player is reachable via NavMesh
-    bool CanReachPlayer()
+
+    void HandleWaiting(float distanceToPlayer)
     {
+        if (CanSeeAndReachPlayer(distanceToPlayer))
+        {
+            agent.isStopped = false;
+            currentState = State.Chasing;
+            return;
+        }
+
+        roamTimer -= Time.deltaTime;
+
+        if (roamTimer <= 0f)
+        {
+            agent.isStopped = false;
+            SetNewRoamTarget();
+            currentState = State.Roaming;
+        }
+    }
+
+    void HandleChasing(float distanceToPlayer)
+    {
+        if (!CanSeeAndReachPlayer(distanceToPlayer))
+        {
+            currentState = State.Roaming;
+            SetNewRoamTarget();
+            return;
+        }
+
+        agent.SetDestination(player.position);
+    }
+
+    void SetNewRoamTarget()
+    {
+        Vector3 randomDirection = Random.insideUnitSphere * roamRadius;
+        randomDirection += transform.position;
+
+        NavMeshHit hit;
+
+        if (NavMesh.SamplePosition(randomDirection, out hit, roamRadius, NavMesh.AllAreas))
+        {
+            agent.SetDestination(hit.position);
+        }
+    }
+
+    bool CanSeeAndReachPlayer(float distanceToPlayer)
+    {
+        if (distanceToPlayer > detectionRadius)
+            return false;
+
         NavMeshPath path = new NavMeshPath();
         if (agent.CalculatePath(player.position, path))
         {
             return path.status == NavMeshPathStatus.PathComplete;
         }
+
         return false;
     }
 
-    // Visualize detection and roam areas in the editor
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
