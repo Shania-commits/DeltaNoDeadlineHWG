@@ -16,6 +16,7 @@ public class KeyPickup : MonoBehaviour
         {
             playerInRange = true;
             playerInventory = inventory;
+            playerControlScript = control;
             Debug.Log("Press X to pick up the key.");
         }
     }
@@ -34,7 +35,7 @@ public class KeyPickup : MonoBehaviour
     private void Update()
     {
         // Only pick up if player is in range and presses E
-        if (playerInRange && Input.GetKeyDown(KeyCode.X))
+        if (playerInRange && playerControlScript.actionAvailable)
         {
             playerInventory.hasKey = true;
             Debug.Log("Key picked up!");

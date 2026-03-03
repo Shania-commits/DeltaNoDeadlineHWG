@@ -13,9 +13,9 @@ using UnityEngine.InputSystem.Haptics;
 public class EnemyAI : MonoBehaviour
 {
     public Transform player;
-    public float detectionRadius = 10f;
-    public float roamRadius = 5f;
-    public float roamWaitTime = 3f;
+    public float detectionRadius = 6f;
+    public float roamRadius = 7f;
+    public float roamWaitTime = 1.2f;
 
     private NavMeshAgent agent;
     private float roamTimer;
@@ -47,18 +47,39 @@ public class EnemyAI : MonoBehaviour
         if (screenEffect.profile.TryGet(out vignette))
         {
             vignette.intensity.value = 0f;
+            Debug.Log("Got Vignette");
         }
 
         //Gets film grain reference
         if (screenEffect.profile.TryGet(out filmGrain))
         {
             filmGrain.intensity.value = 0f;
+            Debug.Log("Got Grain");
         }
+
+        ResetEffects();
     }
 
     void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        intensity = Mathf.MoveTowards(intensity, goalIntensity, fadeSpeed * Time.deltaTime); //Moves intensity value to goal
+
+        //Sets values in global volume
+        if (vignette != null && filmGrain != null)
+        {
+            vignette.intensity.Override(intensity);
+
+            float jitter = Random.Range(-0.05f, 0.05f);
+            filmGrain.intensity.Override(Mathf.Clamp01(intensity + jitter));
+
+        }
+        else
+        {
+            Debug.Log("Effects are null");
+        }
+            
 
         switch (currentState)
         {
@@ -75,18 +96,6 @@ public class EnemyAI : MonoBehaviour
                 break;
         }
 
-
-        intensity = Mathf.MoveTowards(intensity, goalIntensity, fadeSpeed * Time.deltaTime); //Moves intensity value to goal
-
-        //Sets values in global volume
-        if (vignette != null && filmGrain != null)
-        {
-            vignette.intensity.Override(intensity);
-
-            float jitter = Random.Range(-0.05f, 0.05f);
-            filmGrain.intensity.Override(Mathf.Clamp01(intensity + jitter));
-
-        }
 
     }
 
@@ -127,14 +136,27 @@ public class EnemyAI : MonoBehaviour
 
     void HandleChasing(float distanceToPlayer)
     {
+
         if (!CanSeeAndReachPlayer(distanceToPlayer))
         {
             currentState = State.Roaming;
             SetNewRoamTarget();
+
+            ResetEffects();
+
             return;
         }
 
         agent.SetDestination(player.position);
+
+        float rangeDistance = Mathf.Clamp(distanceToPlayer, 1f, detectionRadius); //Calculates distance within detection radius
+
+        effectIntesnity = 1f - ((rangeDistance - 1f) / (detectionRadius - 1f)); //Converts distance to usable range
+
+        goalIntensity = Mathf.Lerp(0f, 0.8f, effectIntesnity); //Calculates the new effect intensity
+
+
+        SetMotorSpeeds(0.01f, 0.05f); //Controller rumble
     }
 
     void SetNewRoamTarget()
@@ -195,5 +217,11 @@ public class EnemyAI : MonoBehaviour
     {
         if (Gamepad.current != null)
             InputSystem.ResetHaptics();
+    }
+
+    public void ResetEffects()
+    {
+        StopRumble();
+        goalIntensity = 0f;
     }
 }

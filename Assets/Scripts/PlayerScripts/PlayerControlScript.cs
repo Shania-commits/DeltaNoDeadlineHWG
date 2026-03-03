@@ -16,8 +16,8 @@ public class PlayerControlScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        // Freeze unwanted rotations (keep only Y rotation for turning)
-        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        // Freeze unwanted rotations
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY;
 
         // Smooth interpolation for physics-based movement
         rb.interpolation = RigidbodyInterpolation.Interpolate;
