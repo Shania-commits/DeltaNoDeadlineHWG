@@ -579,7 +579,7 @@ public partial class @InputSystem_PlayerActions: IInputActionCollection2, IDispo
                     ""name"": ""Submit"",
                     ""type"": ""Button"",
                     ""id"": ""7607c7b6-cd76-4816-beef-bd0341cfe950"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -925,7 +925,7 @@ public partial class @InputSystem_PlayerActions: IInputActionCollection2, IDispo
                 {
                     ""name"": """",
                     ""id"": ""9e92bb26-7e3b-4ec4-b06b-3c8f8e498ddc"",
-                    ""path"": ""*/{Submit}"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse;Gamepad;Touch;Joystick;XR"",
@@ -958,7 +958,7 @@ public partial class @InputSystem_PlayerActions: IInputActionCollection2, IDispo
                 {
                     ""name"": """",
                     ""id"": ""e1394cbc-336e-44ce-9ea8-6007ed6193f7"",
-                    ""path"": ""<Pen>/position"",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
@@ -991,8 +991,8 @@ public partial class @InputSystem_PlayerActions: IInputActionCollection2, IDispo
                 {
                     ""name"": """",
                     ""id"": ""8d66d5ba-88d7-48e6-b1cd-198bbfef7ace"",
-                    ""path"": ""<Pen>/tip"",
-                    ""interactions"": """",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Click"",
