@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Haptics;
 
 public class Enemy : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class Enemy : MonoBehaviour
 
             if (sceneLoader != null)
             {
+                
                 sceneLoader.LoadSceneByName("LoseScreen");
             }
         }

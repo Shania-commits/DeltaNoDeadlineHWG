@@ -1,18 +1,30 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PauseManager : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     private bool isPaused = false;
 
-    void Update()
+    /*void Update()
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
             if (isPaused)
                 Resume();
             else
+                Pause();
+        }
+    }*/
+
+    public void OnPrevious(InputAction.CallbackContext context)
+    {
+        //Button pressed
+        if (context.performed)
+        {
+            Debug.Log("Interaction triggered");
+            if (!isPaused)
                 Pause();
         }
     }

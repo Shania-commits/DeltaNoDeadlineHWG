@@ -150,7 +150,7 @@ public partial class @InputSystem_PlayerActions: IInputActionCollection2, IDispo
                     ""name"": ""Previous"",
                     ""type"": ""Button"",
                     ""id"": ""2776c80d-3c14-4091-8c56-d04ced07a2b0"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -497,7 +497,7 @@ public partial class @InputSystem_PlayerActions: IInputActionCollection2, IDispo
                 {
                     ""name"": """",
                     ""id"": ""1534dc16-a6aa-499d-9c3a-22b47347b52a"",
-                    ""path"": ""<Keyboard>/1"",
+                    ""path"": ""<Keyboard>/b"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
@@ -508,7 +508,7 @@ public partial class @InputSystem_PlayerActions: IInputActionCollection2, IDispo
                 {
                     ""name"": """",
                     ""id"": ""25060bbd-a3a6-476e-8fba-45ae484aad05"",
-                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",

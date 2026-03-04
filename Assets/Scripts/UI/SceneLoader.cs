@@ -1,14 +1,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Haptics;
 
 public class SceneLoader : MonoBehaviour
 {
-    /*private static SceneLoader instance;
+    private static SceneLoader instance;
 
     void Awake()
     {
-        if (instance == null)
+        if (Gamepad.current != null)
+            InputSystem.ResetHaptics();
+        /*if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -16,11 +19,13 @@ public class SceneLoader : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }
-    }*/
+        }*/
+    }
 
     public void LoadSceneByName(string sceneName)
     {
+        if (Gamepad.current != null)
+            InputSystem.ResetHaptics();
         SceneManager.LoadScene(sceneName);
     }
 
