@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -21,5 +22,15 @@ public class SceneLoader : MonoBehaviour
     public void LoadSceneByName(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void OnNext(InputAction.CallbackContext context)
+    {
+        //Button pressed
+        if (context.performed)
+        {
+            Debug.Log("Interaction triggered");
+            Application.Quit();
+        }
     }
 }

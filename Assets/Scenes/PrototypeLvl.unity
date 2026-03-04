@@ -824,6 +824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc28c58ed014a094fa244810cce01afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
+  winManager: {fileID: 263815069}
 --- !u!114 &387198336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1028,6 +1029,7 @@ GameObject:
   - component: {fileID: 463085092}
   - component: {fileID: 463085091}
   - component: {fileID: 463085090}
+  - component: {fileID: 463085093}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1096,6 +1098,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &463085093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463085089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bf344b736e5b2a48b08eb1d501304ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
 --- !u!114 &463905399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1853,7 +1867,19 @@ MonoBehaviour:
     m_ActionId: 2776c80d-3c14-4091-8c56-d04ced07a2b0
     m_ActionName: 'Player/Previous[/Keyboard/1,/XInputControllerWindows/dpad/left]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 463085093}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: OnNext
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: b7230bb6-fc9b-4f52-8b25-f5e19cb2c2ba
     m_ActionName: 'Player/Next[/Keyboard/2,/XInputControllerWindows/dpad/right]'
   - m_PersistentCalls:
@@ -2113,6 +2139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   loseUI: {fileID: 1133051837}
+  lost: 0
 --- !u!4 &767352054
 Transform:
   m_ObjectHideFlags: 0
@@ -3123,6 +3150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6752591dfaa2aa44af53b0652279400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  loseManager: {fileID: 767352053}
 --- !u!114 &1136602997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3140,6 +3168,7 @@ MonoBehaviour:
   roamRadius: 7
   roamWaitTime: 1.2
   screenEffect: {fileID: 1560600579}
+  loseManager: {fileID: 767352053}
 --- !u!195 &1136602998
 NavMeshAgent:
   m_ObjectHideFlags: 0

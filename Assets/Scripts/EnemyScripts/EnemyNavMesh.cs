@@ -37,6 +37,8 @@ public class EnemyAI : MonoBehaviour
     private float fadeSpeed = 2f;
     private float effectIntesnity;
 
+    public LoseManager loseManager;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -155,8 +157,8 @@ public class EnemyAI : MonoBehaviour
 
         goalIntensity = Mathf.Lerp(0f, 0.8f, effectIntesnity); //Calculates the new effect intensity
 
-
-        SetMotorSpeeds(0.01f, 0.05f); //Controller rumble
+        if (!loseManager.lost)
+            SetMotorSpeeds(0.01f, 0.05f); //Controller rumble
     }
 
     void SetNewRoamTarget()

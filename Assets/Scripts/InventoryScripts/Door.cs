@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
     private bool playerInRange = false;
     private PlayerInventory currentInventory;
     private PlayerControlScript playerControlScript;
+    public WinManager winManager;
 
     //Check if player in range and has key
     private void OnTriggerEnter(Collider other)
@@ -52,8 +53,10 @@ public class Door : MonoBehaviour
         if (isOpening)
         {
             Debug.Log("You Win!");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            //SceneManager.LoadScene("WinScene"); For when we add a win scene
+            if (winManager != null)
+            {
+                winManager.ShowWinScreen();
+            }
         }
     }
 }
