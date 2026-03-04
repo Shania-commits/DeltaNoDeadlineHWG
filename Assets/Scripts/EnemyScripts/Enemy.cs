@@ -1,12 +1,9 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Haptics;
 
 public class Enemy : MonoBehaviour
 {
 
-    public LoseManager loseManager;
-    //public EnemyAI enemyAI;
+    public SceneLoader sceneLoader;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,15 +11,10 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("You Lose!");
 
-            //enemyAI = GetComponent<EnemyAI>();
 
-            //LoseManager loseManager = FindObjectOfType<LoseManager>();
-
-            if (loseManager != null)
+            if (sceneLoader != null)
             {
-                //enemyAI.ResetEffects();
-                //InputSystem.ResetHaptics();
-                loseManager.ShowLoseScreen();
+                sceneLoader.LoadSceneByName("LoseScreen");
             }
         }
     }

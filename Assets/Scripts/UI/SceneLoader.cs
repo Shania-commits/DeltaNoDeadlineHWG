@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class SceneLoader : MonoBehaviour
 {
-    private static SceneLoader instance;
+    /*private static SceneLoader instance;
 
     void Awake()
     {
@@ -17,7 +17,7 @@ public class SceneLoader : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
+    }*/
 
     public void LoadSceneByName(string sceneName)
     {
