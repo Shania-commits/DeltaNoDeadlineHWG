@@ -1732,6 +1732,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControlScript
   speed: 3
   turnSpeed: 120
+  crouchSpeed: 1
+  crouchHeight: 0.5
+  normalHeight: 2
+  crouchTransitionSpeed: 3
   actionAvailable: 0
 --- !u!54 &696924307
 Rigidbody:
@@ -2236,7 +2240,7 @@ Transform:
   m_GameObject: {fileID: 775088484}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.646, z: -0.162}
+  m_LocalPosition: {x: 0, y: 0.646, z: -0.037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3176,9 +3180,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
   player: {fileID: 696924311}
-  detectionRadius: 6
+  detectionRadius: 10
   roamRadius: 7
-  roamWaitTime: 1.2
+  roamWaitTime: 0.2
   screenEffect: {fileID: 1560600579}
   loseManager: {fileID: 767352053}
 --- !u!195 &1136602998
@@ -3191,7 +3195,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 2.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -3474,7 +3478,7 @@ Transform:
   m_GameObject: {fileID: 1243326676}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.646, z: 0.162}
+  m_LocalPosition: {x: 0, y: 1.646, z: 0.037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3654,7 +3658,7 @@ Transform:
   m_GameObject: {fileID: 1314202842}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 0.17, z: -5.5}
+  m_LocalPosition: {x: 0.02, y: 0.21, z: -5.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
