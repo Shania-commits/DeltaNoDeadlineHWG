@@ -9215,6 +9215,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: floorTile_BASE (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 6325582329151327892, guid: d9b738c534012674f8290ac565036ce3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bfb57e8c9038ce04192dee912bc528a4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
