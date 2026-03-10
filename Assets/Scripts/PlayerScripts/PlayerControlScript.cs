@@ -12,7 +12,7 @@ public class PlayerControlScript : MonoBehaviour
     public float speed = 15f;
     public float turnSpeed = 220f;
 
-// Crouch settings
+    // Crouch settings
     [Header("Crouch Settings")]
     public float crouchSpeed = 8f;
     public float crouchHeight = 0.5f;
@@ -27,7 +27,7 @@ public class PlayerControlScript : MonoBehaviour
     public float minPitchAngle = -90f;
     public Vector3 cameraOffset = new Vector3(0f, 0.3f, 0f);
 
-// Private variables
+    // Private variables
     private Rigidbody rb;
     private CapsuleCollider capsuleCollider;
     private PlayerInput playerInput;
@@ -69,8 +69,8 @@ public class PlayerControlScript : MonoBehaviour
         InputAction crouchAction = playerActionMap.FindAction("Crouch");
         if (crouchAction != null)
         {
+            // Toggle crouch on press
             crouchAction.performed += OnCrouch;
-            crouchAction.canceled += OnCrouch;
         }
 
         InputAction interactAction = playerActionMap.FindAction("Interact");
@@ -109,7 +109,6 @@ public class PlayerControlScript : MonoBehaviour
             if (crouchAction != null)
             {
                 crouchAction.performed -= OnCrouch;
-                crouchAction.canceled -= OnCrouch;
             }
 
             InputAction interactAction = playerActionMap.FindAction("Interact");
@@ -209,21 +208,13 @@ public class PlayerControlScript : MonoBehaviour
         }
     }
 
-    //Tracks if crouch button is pressed
+    // Toggle crouch when the crouch button is pressed
     public void OnCrouch(InputAction.CallbackContext context)
     {
-        //Button pressed
         if (context.performed)
         {
-            Debug.Log("Crouch started");
-            isCrouching = true;
-        }
-
-        //Button released
-        if (context.canceled)
-        {
-            Debug.Log("Crouch ended");
-            isCrouching = false;
+            isCrouching = !isCrouching;
+            Debug.Log(isCrouching ? "Crouch started" : "Crouch ended");
         }
     }
 
