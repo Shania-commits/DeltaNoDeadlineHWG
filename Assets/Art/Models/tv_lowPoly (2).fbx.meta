@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ee22ba56a9ade4d26801d1d922790c86
+guid: b4a0668c9245230448d975c681ddbcec
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: chair_material
-    second: {fileID: 2100000, guid: c02c18999d01c0a4b900caf5fa010988, type: 2}
+      name: TV_material
+    second: {fileID: 2100000, guid: 3c6bd2524fd010f4d93497a67b39cdc8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TV_screen_material
+    second: {fileID: 2100000, guid: 3ae17bca2fad3174aa57c935532ca446, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

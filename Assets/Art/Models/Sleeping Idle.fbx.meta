@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ee22ba56a9ade4d26801d1d922790c86
+guid: 507b38e9cf9ae764e899ef0641ffb998
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,73 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: chair_material
-    second: {fileID: 2100000, guid: c02c18999d01c0a4b900caf5fa010988, type: 2}
+      name: Arms
+    second: {fileID: 2100000, guid: 10076b12b9feddb448ee155a10b6ca33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chest
+    second: {fileID: 2100000, guid: 10076b12b9feddb448ee155a10b6ca33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dress1
+    second: {fileID: 2100000, guid: 10076b12b9feddb448ee155a10b6ca33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Face1
+    second: {fileID: 2100000, guid: 04d78dd7daf6b344fb00c904322be75a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair1
+    second: {fileID: 2100000, guid: f6d6f76f905746041b6896c8f184e52a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LegSkin
+    second: {fileID: 2100000, guid: 10076b12b9feddb448ee155a10b6ca33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shoe1
+    second: {fileID: 2100000, guid: 10076b12b9feddb448ee155a10b6ca33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Arms
+    second: {fileID: 2100000, guid: 10076b12b9feddb448ee155a10b6ca33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Chest
+    second: {fileID: 2100000, guid: 10076b12b9feddb448ee155a10b6ca33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Dress1
+    second: {fileID: 2100000, guid: 10076b12b9feddb448ee155a10b6ca33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Face1
+    second: {fileID: 2100000, guid: 04d78dd7daf6b344fb00c904322be75a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Hair1
+    second: {fileID: 2100000, guid: f6d6f76f905746041b6896c8f184e52a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__LegSkin
+    second: {fileID: 2100000, guid: 10076b12b9feddb448ee155a10b6ca33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__Shoe1
+    second: {fileID: 2100000, guid: 10076b12b9feddb448ee155a10b6ca33, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
