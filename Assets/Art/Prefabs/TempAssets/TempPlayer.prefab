@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 3123847815526277797}
   - component: {fileID: 6770417697997877166}
   - component: {fileID: 1447426832605791460}
+  - component: {fileID: -4207862819509195590}
   m_Layer: 0
   m_Name: TempPlayer
   m_TagString: Player
@@ -189,6 +190,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &-4207862819509195590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7311892083564736943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e61cde17e2ac844b704846d5cfb4e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
+  hasKey: 0
 --- !u!1 &8823976776965985253
 GameObject:
   m_ObjectHideFlags: 0
