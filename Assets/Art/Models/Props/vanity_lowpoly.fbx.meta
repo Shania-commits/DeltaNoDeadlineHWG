@@ -3,7 +3,27 @@ guid: 064f3c23a2a5148678ead1f49e9f81d5
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mirror_material
+    second: {fileID: 2100000, guid: a2c6c4b6ae10dc243b4e5a8ff0fc2a21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vanity_handle
+    second: {fileID: 2100000, guid: a2c6c4b6ae10dc243b4e5a8ff0fc2a21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vanity_lights
+    second: {fileID: 2100000, guid: a2c6c4b6ae10dc243b4e5a8ff0fc2a21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vanity_material
+    second: {fileID: 2100000, guid: a2c6c4b6ae10dc243b4e5a8ff0fc2a21, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
