@@ -54,7 +54,7 @@ Shader "Custom/UI_AdditiveOverlay"
                 float strength = saturate((brightness - 0.02) * 4);
 
                 col.rgb *= strength;
-                col.rgb *= 1.5;
+                col.rgb *= 3;
 
                 return col;
             }
