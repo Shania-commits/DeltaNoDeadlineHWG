@@ -1,17 +1,21 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Haptics;
 
 public class WinManager : MonoBehaviour
 {
     public GameObject winUI;
+    public string finalSceneName = "FinalScene";
 
     public void ShowWinScreen()
     {
         winUI.SetActive(true);
+
         if (Gamepad.current != null)
+        {
             InputSystem.ResetHaptics();
+        }
+
         Time.timeScale = 0f;
     }
 
@@ -19,8 +23,7 @@ public class WinManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         winUI.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        
+        SceneManager.LoadScene(finalSceneName);
     }
 
     public void LoadMainMenu()

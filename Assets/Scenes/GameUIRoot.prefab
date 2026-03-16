@@ -1762,6 +1762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WinManager
   winUI: {fileID: 3487734657387146461}
+  finalSceneName: FinalScene
 --- !u!1 &4862784371550770635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2160,6 +2161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LoseManager
   loseUI: {fileID: 4862784371550770635}
   lost: 0
+  finalSceneName: FinalScene
 --- !u!1 &5770462871153093887
 GameObject:
   m_ObjectHideFlags: 0
