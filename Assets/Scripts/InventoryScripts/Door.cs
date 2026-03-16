@@ -8,6 +8,7 @@ public class Door : MonoBehaviour
     private PlayerInventory currentInventory;
     private PlayerControlScript playerControlScript;
     public SceneLoader sceneLoader;
+    public TaskManager taskManager;
 
     //Check if player in range and has key
     private void OnTriggerEnter(Collider other)
@@ -43,6 +44,7 @@ public class Door : MonoBehaviour
             {
                 Debug.Log("Door unlocked!");
                 isOpening = true;
+                taskManager.CompleteTask();
             }
             else
             {

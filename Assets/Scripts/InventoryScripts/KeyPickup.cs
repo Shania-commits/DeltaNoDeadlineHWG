@@ -1,44 +1,63 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class KeyPickup : MonoBehaviour
 {
-    private bool playerInRange = false;   // Track if player is inside trigger
+    private bool playerInRange = false;
+    private bool pickedUp = false;
+
     private PlayerInventory playerInventory;
     private PlayerControlScript playerControlScript;
 
+    public TaskManager taskManager;
+    public GameObject interactText;
+
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the player entered the trigger
         PlayerControlScript control = other.GetComponent<PlayerControlScript>();
         PlayerInventory inventory = other.GetComponent<PlayerInventory>();
+
         if (inventory != null)
         {
             playerInRange = true;
             playerInventory = inventory;
             playerControlScript = control;
+
+            if (interactText != null)
+                interactText.SetActive(true);
+
             Debug.Log("Press X to pick up the key.");
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        // Player left the trigger
         if (other.GetComponent<PlayerInventory>() != null)
         {
             playerInRange = false;
             playerInventory = null;
             playerControlScript = null;
+
+            if (interactText != null)
+                interactText.SetActive(false);
         }
     }
 
     private void Update()
     {
-        // Only pick up if player is in range and presses E
-        if (playerInRange && playerControlScript.actionAvailable)
+        if (!pickedUp && playerInRange && playerControlScript.actionAvailable)
         {
+            pickedUp = true;
+
             playerInventory.hasKey = true;
+
+            if (taskManager != null)
+                taskManager.CompleteTask();
+
+            if (interactText != null)
+                interactText.SetActive(false);
+
             Debug.Log("Key picked up!");
+
             Destroy(gameObject);
         }
     }
