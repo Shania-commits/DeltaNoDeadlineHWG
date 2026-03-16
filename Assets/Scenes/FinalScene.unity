@@ -784,7 +784,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1554522014}
+  m_Father: {fileID: 503748130}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1144,7 +1144,7 @@ PrefabInstance:
     - {fileID: 5380488374285521860, guid: 7c9e5abd28b495e48b05ec3d2ccb7451, type: 3}
     - {fileID: 4201133823782206858, guid: 7c9e5abd28b495e48b05ec3d2ccb7451, type: 3}
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 314444137466323236, guid: 7c9e5abd28b495e48b05ec3d2ccb7451, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 7618458693825195086, guid: 7c9e5abd28b495e48b05ec3d2ccb7451, type: 3}
       insertIndex: -1
       addedObject: {fileID: 411651830}
     m_AddedComponents:
@@ -1356,6 +1356,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!4 &503748130 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7618458693825195086, guid: 7c9e5abd28b495e48b05ec3d2ccb7451, type: 3}
+  m_PrefabInstance: {fileID: 430515759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &630952467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1813,11 +1818,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420726415}
   m_CullTransparentMesh: 1
---- !u!224 &1554522014 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 314444137466323236, guid: 7c9e5abd28b495e48b05ec3d2ccb7451, type: 3}
-  m_PrefabInstance: {fileID: 430515759}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1689960307
 GameObject:
   m_ObjectHideFlags: 0
