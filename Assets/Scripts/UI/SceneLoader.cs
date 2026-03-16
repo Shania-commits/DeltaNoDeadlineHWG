@@ -29,6 +29,8 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    
+
     public void OnNext(InputAction.CallbackContext context)
     {
         //Button pressed
