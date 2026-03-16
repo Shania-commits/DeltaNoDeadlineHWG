@@ -23,29 +23,29 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("You Lose!");
 
-            enemyAIScript.loss = true;
+            //enemyAIScript.loss = true;
 
 
 
             //Time.timeScale = 0;
 
-            if (loseUI != null)
-                loseUI.SetActive(true);
+            /*if (loseUI != null)
+                loseUI.SetActive(true);*/
 
             
 
-            /*SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
             if (Gamepad.current != null)
-                InputSystem.ResetHaptics();*/
+                InputSystem.ResetHaptics();
 
             
 
-            /*if (sceneLoader != null)
+            if (sceneLoader != null)
             {
                 
                 sceneLoader.LoadSceneByName("LoseScreen");
-            }*/
+            }
         }
     }
 }

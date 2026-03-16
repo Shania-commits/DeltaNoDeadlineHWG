@@ -55,11 +55,11 @@ public class Door : MonoBehaviour
         {
             Debug.Log("You Win!");
 
-            winUI.SetActive(true);
-            /*if (sceneLoader != null)
+            //winUI.SetActive(true);
+            if (sceneLoader != null)
             {
                 sceneLoader.LoadSceneByName("WinScreen");
-            }*/
+            }
         }
     }
 }
