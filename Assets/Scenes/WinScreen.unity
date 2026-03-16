@@ -119,6 +119,126 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &1503459944
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 178202497614349955, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 748.0469
+      objectReference: {fileID: 0}
+    - target: {fileID: 178202497614349955, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178202497614349955, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 198.52707
+      objectReference: {fileID: 0}
+    - target: {fileID: 178202497614349955, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 178202497614349955, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178202497614349955, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178202497614349955, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178202497614349955, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178202497614349955, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178202497614349955, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587973484494887396, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986616756768829709, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986616756768829709, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986616756768829709, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986616756768829709, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1503459945}
+    - target: {fileID: 5986616756768829709, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1503459945}
+    - target: {fileID: 5986616756768829709, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadSceneByName
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986616756768829709, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LoadSceneByName
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986616756768829709, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986616756768829709, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SceneLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986616756768829709, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986616756768829709, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986616756768829709, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: FinalScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639095925562043524, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+      propertyPath: m_Name
+      value: WinUIRoot Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+--- !u!114 &1503459945 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4736850709121370758, guid: 67b9362b025b41b43b9f1bc9bc50bdee, type: 3}
+  m_PrefabInstance: {fileID: 1503459944}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bf344b736e5b2a48b08eb1d501304ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
 --- !u!1001 &5759188632542381494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -171,6 +291,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinUIRoot
       objectReference: {fileID: 0}
+    - target: {fileID: 8867833319702078844, guid: a7c2eda4ef34c9543a7949cc413cd4fa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -181,3 +305,4 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 5759188632542381494}
+  - {fileID: 1503459944}
